@@ -1,0 +1,6 @@
+---
+applications:
+- name: chat-brooklyn-application
+  path: target/brooklyn-example-hello-world-webapp.war
+  services:
+   - databaseChat
