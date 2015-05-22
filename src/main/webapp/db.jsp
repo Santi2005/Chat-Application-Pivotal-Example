@@ -55,10 +55,10 @@ JsonObject  jobject = jelement.getAsJsonObject();
 JsonArray clearDB = jobject.getAsJsonArray("cleardb");
 JsonObject credentials = clearDB.get(0).getAsJsonObject().getAsJsonObject("credentials");
 
-String hostName = credentials.get("hostname").getAsString();
-String username = credentials.get("username").getAsString();
-String password = credentials.get("password").getAsString();
-String name = credentials.get("name").getAsString();
+String hostName = System.getenv("myDbHostName");
+String username = System.getenv("myDbUser");
+String password = System.getenv("myDbPassword");
+String name = System.getenv("myDbName");
 
 //JDBC_URL does not work.
 //String jdbURL = credentials.get("jdbcUrl").getAsString();

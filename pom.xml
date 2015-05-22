@@ -47,6 +47,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>brooklyn-example-hello-world-webapp</finalName>
+        <finalName>brooklyn-webapp-custom-env</finalName>
     </build>
 </project>
