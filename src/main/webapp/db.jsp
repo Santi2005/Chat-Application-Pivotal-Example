@@ -49,11 +49,11 @@ String url=System.getProperty("brooklyn.example.db.url");
 //URL should be supplied e.g. ""-Dbrooklyn.example.db.url=jdbc:mysql://localhost/visitors?user=brooklyn&password=br00k11n"
 //(note quoting needed due to ampersand)
 */
-String VCAP_SERVICES=System.getenv("VCAP_SERVICES");
-JsonElement jelement = new JsonParser().parse(VCAP_SERVICES);
-JsonObject  jobject = jelement.getAsJsonObject();
-JsonArray clearDB = jobject.getAsJsonArray("cleardb");
-JsonObject credentials = clearDB.get(0).getAsJsonObject().getAsJsonObject("credentials");
+//String VCAP_SERVICES=System.getenv("VCAP_SERVICES");
+//JsonElement jelement = new JsonParser().parse(VCAP_SERVICES);
+//JsonObject  jobject = jelement.getAsJsonObject();
+//JsonArray clearDB = jobject.getAsJsonArray("cleardb");
+//JsonObject credentials = clearDB.get(0).getAsJsonObject().getAsJsonObject("credentials");
 
 String hostName = System.getenv("myDbHostName");
 String username = System.getenv("myDbUser");
