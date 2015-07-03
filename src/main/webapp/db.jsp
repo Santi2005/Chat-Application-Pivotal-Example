@@ -66,6 +66,11 @@ String name = System.getenv("myDbName");
 String url= "jdbc:mysql://"+hostName+":3306/"+name+"?user="+username+"&password="+password;
 String url1= String.format("jdbc:mysql://%s:3306/%s?user=%s&password=%s",hostName, name, username, password);
 url=url1;
+String envVar=System.getenv("OPENSHIFT_ENV_VAR");
+%>
+<p> URL: <%= url %> </p>
+<p> ENV: <%= envVar %> </p>
+<%
 if (url==null) {
 %>
     <p>Not Database</p>
