@@ -60,6 +60,11 @@
             <artifactId>jrobin</artifactId>
             <version>1.5.9</version>
         </dependency>
+        <dependency>
+            <groupId>org.ejml</groupId>
+            <artifactId>all</artifactId>
+            <version>0.27</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>brooklyn-webapp-custom-env-monitoring</finalName>

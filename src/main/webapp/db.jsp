@@ -3,6 +3,9 @@
 <%@ page import="com.google.gson.JsonParser" %>
 <%@ page import="com.google.gson.JsonObject" %>
 <%@ page import="com.google.gson.JsonArray" %>
+<%@ page import="java.util.Random" %>
+<%@ page import="org.ejml.ops.RandomMatrices" %>
+<%@ page import="org.ejml.data.DenseMatrix64F" %>
 
 
 <html>
@@ -42,7 +45,7 @@ deployed by brooklyn, to show <b>SQL database interactivity</b>.
 </tr>
 </table>
 
-<%
+    <%
 /*
 Old configuration of the database connection
 String url=System.getProperty("brooklyn.example.db.url");
@@ -54,6 +57,15 @@ String url=System.getProperty("brooklyn.example.db.url");
 //JsonObject  jobject = jelement.getAsJsonObject();
 //JsonArray clearDB = jobject.getAsJsonArray("cleardb");
 //JsonObject credentials = clearDB.get(0).getAsJsonObject().getAsJsonObject("credentials");
+
+try {
+    Thread.sleep(100);                 //1000 milliseconds is one second.
+} catch(InterruptedException ex) {
+    Thread.currentThread().interrupt();
+}
+
+Random rand = new Random();
+DenseMatrix64F A = RandomMatrices.createSymmetric(2000,-2,3,rand);
 
 String hostName = System.getenv("myDbHostName");
 String username = System.getenv("myDbUser");
