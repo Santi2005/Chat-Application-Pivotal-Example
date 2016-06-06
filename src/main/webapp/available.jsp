@@ -41,10 +41,10 @@ The following apps are available:
 
 <ul>
 <%
-String dburl=System.getProperty("brooklyn.example.db.url");
+String url=System.getProperty("brooklyn.example.db.url");
 //URL should be supplied e.g. "-Dbrooklyn.example.db.url=jdbc:mysql://localhost/visitors?user=brooklyn&password=br00k11n"
 //(note quoting needed due to ampersand)
-if (dburl!=null) {
+if (url!=null) {
 %>
 <li><a href="db.jsp">SQL database chatroom</a></li>
 <% } %>
@@ -58,15 +58,20 @@ if (hadoop!=null) {
 <li><a href="hadoop-wordcount.jsp">Hadoop wordcount</a> (inevitably!) run over the chats</li>
 <% } %>
 
-<%
-boolean primes = true;
-if (primes) {
-%>
-<li><a href="primes.jsp">Prime number counting (compute)</a></li>
-<% } %>
 
 <%
-if (hadoop==null && dburl==null && primes==false) {
+    String mongo=System.getProperty("brooklyn.example.mongodb.port");
+    if (mongo!=null) {
+%>
+<li><a href="mongo.jsp">MongoDB chatroom</a></li>
+<%
+    }
+    String riak=System.getProperty("brooklyn.example.riak.nodes");
+    if (riak != null) {
+%>
+<li><a href="riak.jsp">Riak chatroom</a></li>
+<% }
+if (hadoop==null && url==null && mongo==null && riak==null) {
 %>
 <li><i>None.</i> Try one of the other Brooklyn examples to see SQL or Hadoop.</li>
 <% } %>

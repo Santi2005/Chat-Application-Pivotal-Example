@@ -1,6 +1,13 @@
----
 applications:
 - name: chat-brooklyn-application
-  path: target/brooklyn-example-hello-world-webapp.war
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  disk_quota: 1024M
+  instances: 1
+  memory: 512M
+  host: chat-application-example
+  path: target/cf-brooklyn-hello-world-webapp.war
+  timeout: 100
+  env:
+    key1: value1
   services:
    - databaseChat

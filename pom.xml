@@ -47,7 +47,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>brooklyn-webapp-custom-env</finalName>
+        <finalName>cf-brooklyn-hello-world-webapp</finalName>
     </build>
 
     <profiles>
